@@ -68,18 +68,20 @@ public class SubscriptionsAdapter extends RecyclerView.Adapter<SubscriptionsAdap
             api.checkEligibility(account.getAccountNumber(), sub.getName(), new Callback<Eligibility>() {
                 @Override
                 public void success(Eligibility eligibility, Response response) {
-                    holder.rewardWaiting.setVisibility(View.VISIBLE);
-                    holder.listItemLayout.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-                            alertDialogBuilder.setTitle("Your Reward");
-                            alertDialogBuilder.setMessage(sub.getReward()).setCancelable(false);
-                            AlertDialog alertDialog = alertDialogBuilder.create();
-                            alertDialog.setCanceledOnTouchOutside(true);
-                            alertDialog.show();
-                        }
-                    });
+                    if (eligibility.getPointsGathered() >= eligibility.getPointsReq()){
+                        holder.rewardWaiting.setVisibility(View.VISIBLE);
+                        holder.listItemLayout.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+                                alertDialogBuilder.setTitle("Your Reward");
+                                alertDialogBuilder.setMessage(sub.getReward()).setCancelable(false);
+                                AlertDialog alertDialog = alertDialogBuilder.create();
+                                alertDialog.setCanceledOnTouchOutside(true);
+                                alertDialog.show();
+                            }
+                        });
+                    }
                 }
 
                 @Override

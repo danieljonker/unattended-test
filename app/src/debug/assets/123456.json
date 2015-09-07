@@ -9,6 +9,10 @@
         {
             "name":"Kids",
             "reward":null
+        },
+        {
+            "name":"Music",
+            "reward":"Karaoke Pro Machine"
         }
     ]
 }
