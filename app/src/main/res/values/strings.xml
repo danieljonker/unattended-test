@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sky Rewards</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_account">AccountActivity</string>
+
+    <string name="account_num_wrong_length">Account number is the wrong length</string>
+</resources>

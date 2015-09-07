@@ -1,0 +1,15 @@
+{
+    "account_number": 123456,
+    "account_holder_name": "Daniel",
+    "subscription_list": [
+        {
+            "name":"Sports",
+            "reward":"Champions League Final Ticket"
+        },
+        {
+            "name":"Kids",
+            "reward":null
+        }
+    ]
+}
+
